@@ -5,40 +5,20 @@ import { FaHome, FaUser, FaCode, FaBriefcase, FaEnvelope } from 'react-icons/fa'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [animationState, setAnimationState] = useState<'idle' | 'morphing' | 'expanding'>('idle');
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
-    
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const shouldShrink = scrollPosition > 100;
-
+      
       if (shouldShrink !== isScrolled) {
-        if (shouldShrink) {
-          // Shrinking animation
-          setAnimationState('morphing');
-          timeoutId = setTimeout(() => {
-            setIsScrolled(true);
-            timeoutId = setTimeout(() => {
-              setAnimationState('idle');
-            }, 800);
-          }, 500);
-        } else {
-          // Expanding animation
-          setAnimationState('expanding');
-          setIsScrolled(false);
-          timeoutId = setTimeout(() => {
-            setAnimationState('idle');
-          }, 800);
-        }
+        setIsScrolled(shouldShrink);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      if (timeoutId) clearTimeout(timeoutId);
     };
   }, [isScrolled]);
 
@@ -58,21 +38,16 @@ export default function Navbar() {
   };
 
   return (
-    <>
-      <nav
-        className={`fixed left-0 right-0 z-50 transition-all duration-700 ease-out ${
-          isScrolled ? 'top-2' : 'top-4'
+    <nav
+      className={`fixed left-0 right-0 z-50 transition-all duration-700 ease-out ${
+        isScrolled ? 'top-2' : 'top-4'
+      }`}
+    >
+      <div
+        className={`mx-auto glass-effect-strong rounded-full transition-all duration-700 ease-out relative ${
+          isScrolled ? 'max-w-md px-4' : 'max-w-2xl px-8'
         }`}
       >
-        <div
-          className={`mx-auto glass-effect-strong rounded-full transition-all duration-700 ease-out relative ${
-            isScrolled ? 'max-w-md px-4' : 'max-w-2xl px-8'
-          } ${
-            animationState === 'morphing' ? 'navbar-morphing' : ''
-          } ${
-            animationState === 'expanding' ? 'navbar-expanding' : ''
-          }`}
-        >
           <div className="flex items-center justify-between">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -109,13 +84,5 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-
-      {/* Liquid Glass Morphing Blob Animation */}
-      {animationState === 'morphing' && (
-        <div className="fixed top-4 left-0 right-0 z-40 pointer-events-none flex justify-center">
-          <div className="liquid-blob-morph" />
-        </div>
-      )}
-    </>
   );
 }
