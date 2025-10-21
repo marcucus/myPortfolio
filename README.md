@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Adrien Marques
 
-## Getting Started
+Portfolio professionnel développé avec Next.js, TypeScript et Tailwind CSS, avec un thème liquid glass moderne et élégant.
 
-First, run the development server:
+## 🎨 Caractéristiques
+
+- **Design Liquid Glass** : Effets de glassmorphisme magnifiques avec arrière-plans dégradés animés
+- **Navbar Intelligente** : Barre de navigation qui se rétracte avec animation de boule liquid glass
+- **Sections Complètes** : Hero, À propos, Stack Technique, Projets, Contact
+- **Cartes 3D Interactives** : Projets présentés avec effet de rotation 3D
+- **Stack Technique Interactive** : Filtrage par catégorie avec indicateurs de niveau de compétence
+- **Utilitaires Interactifs** : Barre de progression de défilement, effet curseur personnalisé, bouton retour en haut
+- **Design Responsive** : Optimisé pour tous les appareils
+
+## 🚀 Démarrage Rapide
 
 ```bash
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Construire pour la production
+npm run build
+
+# Démarrer le serveur de production
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000) pour voir le portfolio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Technologies
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 15.5.6** - Framework React
+- **React 19.1.0** - Bibliothèque UI
+- **TypeScript** - Typage statique
+- **Tailwind CSS 4** - Framework CSS utilitaire
+- **React Icons** - Bibliothèque d'icônes
 
-## Learn More
+## 📁 Structure du Projet
 
-To learn more about Next.js, take a look at the following resources:
+```
+myPortfolio/
+├── app/                    # Pages et layouts Next.js
+│   ├── layout.tsx         # Layout principal
+│   ├── page.tsx           # Page d'accueil
+│   └── globals.css        # Styles globaux avec thème liquid glass
+├── components/            # Composants React
+│   ├── Navbar.tsx        # Navigation avec animation
+│   ├── Hero.tsx          # Section héro
+│   ├── About.tsx         # À propos
+│   ├── TechStack.tsx     # Stack technique
+│   ├── Projects.tsx      # Projets avec cartes 3D
+│   ├── Contact.tsx       # Contact
+│   ├── ScrollProgress.tsx    # Barre de progression
+│   ├── ScrollToTop.tsx       # Bouton retour en haut
+│   └── CursorEffect.tsx      # Effet curseur
+├── public/               # Assets statiques
+└── Profile.txt          # Informations du profil
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Fonctionnalités Clés
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Navbar avec Animation Liquid Glass
+- Se rétracte au scroll avec une animation de boule liquid glass
+- Passe en mode icônes uniquement après 100px de scroll
+- Navigation fluide entre les sections
 
-## Deploy on Vercel
+### Section Stack Technique
+- 12 technologies avec icônes et niveaux
+- Filtrage par catégorie (Frontend, Backend, Mobile, etc.)
+- Barres de progression animées au survol
+- Statistiques récapitulatives
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Section Projets Innovante
+- Cartes 3D avec effet de rotation
+- Cliquez pour révéler les détails
+- 4 projets majeurs présentés
+- Informations détaillées sur les réalisations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔒 Sécurité
+
+- ✅ Analyse CodeQL : Aucune vulnérabilité
+- ✅ Vérification des dépendances : Toutes les dépendances sont sécurisées
+- ✅ Aucun secret dans le code
+
+## 📝 Personnalisation
+
+Les informations du portfolio sont extraites de `Profile.txt`. Pour personnaliser :
+
+1. Modifiez les composants dans `/components`
+2. Ajustez les styles dans `/app/globals.css`
+3. Mettez à jour les informations dans chaque composant
+
+## 🚀 Déploiement
+
+Le moyen le plus simple de déployer votre application Next.js est d'utiliser la [plateforme Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+
+Consultez la [documentation de déploiement Next.js](https://nextjs.org/docs/app/building-your-application/deploying) pour plus de détails.
+
+## 📄 Licence
+
+© 2025 Adrien Marques. Tous droits réservés.
