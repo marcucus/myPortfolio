@@ -47,8 +47,8 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? 'py-2' : 'py-4'
+        className={`fixed top-4 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled ? 'top-2' : 'top-4'
         }`}
       >
         <div

@@ -19,7 +19,7 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Info */}
-          <div className="glass-effect-strong rounded-3xl p-8">
+          <div className="glass-effect-strong rounded-[2rem] p-8">
             <h3 className="text-2xl font-bold mb-6 text-white">Informations</h3>
             
             <div className="space-y-6">
@@ -85,7 +85,7 @@ export default function Contact() {
           </div>
 
           {/* Quick Contact Form */}
-          <div className="glass-effect-strong rounded-3xl p-8">
+          <div className="glass-effect-strong rounded-[2rem] p-8">
             <h3 className="text-2xl font-bold mb-6 text-white">Envoyez un message</h3>
             
             <form className="space-y-4" onSubmit={(e) => {
@@ -127,7 +127,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full glass-effect-strong px-6 py-3 rounded-lg font-semibold hover:bg-gradient-to-r hover:from-purple-500/30 hover:to-blue-500/30 transition-all duration-300 hover:scale-105 border-2 border-white/20"
+                className="w-full glass-effect-strong px-6 py-3 rounded-xl font-semibold glass-hover border-2 border-white/25"
               >
                 Envoyer
               </button>
@@ -136,7 +136,7 @@ export default function Contact() {
         </div>
 
         {/* Footer */}
-        <div className="mt-16 text-center glass-effect-strong rounded-2xl py-6 px-4">
+        <div className="mt-16 text-center glass-effect-strong rounded-[1.5rem] py-6 px-4">
           <p className="text-white/60">
             © 2025 Adrien Marques. Tous droits réservés.
           </p>

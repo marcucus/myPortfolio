@@ -8,16 +8,16 @@ export default function Hero() {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden px-4"
     >
-      {/* Background gradient orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-blob" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-blob" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-blob" style={{ animationDelay: '4s' }} />
+      {/* Background gradient orbs - Enhanced Apple style */}
+      <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-purple-500/30 to-blue-500/20 rounded-full blur-3xl animate-blob" />
+      <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-gradient-to-br from-blue-500/30 to-cyan-500/20 rounded-full blur-3xl animate-blob" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-gradient-to-br from-cyan-500/20 to-purple-500/15 rounded-full blur-3xl animate-blob" style={{ animationDelay: '4s' }} />
 
       <div className="max-w-6xl mx-auto text-center relative z-10">
-        <div className="glass-effect-strong rounded-3xl p-12 backdrop-blur-xl">
+        <div className="glass-effect-strong rounded-[2rem] p-12 md:p-16">
           {/* Profile Image Placeholder */}
           <div className="mb-8 flex justify-center">
-            <div className="w-32 h-32 rounded-full glass-effect-strong flex items-center justify-center text-6xl border-4 border-white/20">
+            <div className="w-32 h-32 rounded-full glass-effect-strong flex items-center justify-center text-6xl border-2 border-white/20 shadow-2xl">
               👨‍💻
             </div>
           </div>
@@ -40,7 +40,7 @@ export default function Hero() {
               href="https://github.com/marcucus"
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-effect-strong px-6 py-3 rounded-full flex items-center gap-2 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+              className="glass-effect px-6 py-3 rounded-full flex items-center gap-2 glass-hover"
             >
               <FaGithub className="text-xl" />
               <span>GitHub</span>
@@ -49,14 +49,14 @@ export default function Hero() {
               href="https://www.linkedin.com/in/adrien-marques-755393181"
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-effect-strong px-6 py-3 rounded-full flex items-center gap-2 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+              className="glass-effect px-6 py-3 rounded-full flex items-center gap-2 glass-hover"
             >
               <FaLinkedin className="text-xl" />
               <span>LinkedIn</span>
             </a>
             <a
               href="mailto:marquesadrien.pro@gmail.com"
-              className="glass-effect-strong px-6 py-3 rounded-full flex items-center gap-2 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+              className="glass-effect px-6 py-3 rounded-full flex items-center gap-2 glass-hover"
             >
               <FaEnvelope className="text-xl" />
               <span>Email</span>
@@ -65,7 +65,7 @@ export default function Hero() {
               href="https://marquesadrien.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-effect-strong px-6 py-3 rounded-full flex items-center gap-2 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+              className="glass-effect px-6 py-3 rounded-full flex items-center gap-2 glass-hover"
             >
               <FaExternalLinkAlt className="text-xl" />
               <span>Site actuel</span>
@@ -78,7 +78,7 @@ export default function Hero() {
               const element = document.getElementById('projects');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="glass-effect-strong px-8 py-4 rounded-full text-lg font-semibold hover:bg-gradient-to-r hover:from-purple-500/30 hover:to-blue-500/30 transition-all duration-300 hover:scale-105 border-2 border-white/20"
+            className="glass-effect-strong px-8 py-4 rounded-full text-lg font-semibold glass-hover border-2 border-white/25 shadow-lg"
           >
             Découvrir mes projets
           </button>
