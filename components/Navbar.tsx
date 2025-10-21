@@ -5,28 +5,41 @@ import { FaHome, FaUser, FaCode, FaBriefcase, FaEnvelope } from 'react-icons/fa'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showBlob, setShowBlob] = useState(false);
+  const [animationState, setAnimationState] = useState<'idle' | 'morphing' | 'expanding'>('idle');
 
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const shouldShrink = scrollPosition > 100;
 
       if (shouldShrink !== isScrolled) {
         if (shouldShrink) {
-          setShowBlob(true);
-          setTimeout(() => {
+          // Shrinking animation
+          setAnimationState('morphing');
+          timeoutId = setTimeout(() => {
             setIsScrolled(true);
-            setTimeout(() => setShowBlob(false), 600);
-          }, 300);
+            timeoutId = setTimeout(() => {
+              setAnimationState('idle');
+            }, 800);
+          }, 500);
         } else {
+          // Expanding animation
+          setAnimationState('expanding');
           setIsScrolled(false);
+          timeoutId = setTimeout(() => {
+            setAnimationState('idle');
+          }, 800);
         }
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, [isScrolled]);
 
   const navItems = [
@@ -47,13 +60,17 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-4 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed left-0 right-0 z-50 transition-all duration-700 ease-out ${
           isScrolled ? 'top-2' : 'top-4'
         }`}
       >
         <div
-          className={`mx-auto glass-effect-strong rounded-full transition-all duration-500 ${
+          className={`mx-auto glass-effect-strong rounded-full transition-all duration-700 ease-out relative ${
             isScrolled ? 'max-w-md px-4' : 'max-w-2xl px-8'
+          } ${
+            animationState === 'morphing' ? 'navbar-morphing' : ''
+          } ${
+            animationState === 'expanding' ? 'navbar-expanding' : ''
           }`}
         >
           <div className="flex items-center justify-between">
@@ -63,19 +80,19 @@ export default function Navbar() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`group relative transition-all duration-500 ${
+                  className={`group relative transition-all duration-700 ease-out ${
                     isScrolled ? 'py-3' : 'py-4'
                   }`}
                   aria-label={item.label}
                 >
                   <div className="relative flex items-center justify-center">
                     <Icon
-                      className={`transition-all duration-300 ${
+                      className={`transition-all duration-500 ${
                         isScrolled ? 'text-xl' : 'text-lg mr-2'
                       } text-white/80 group-hover:text-white group-hover:scale-110`}
                     />
                     <span
-                      className={`text-white/80 group-hover:text-white font-medium transition-all duration-500 ${
+                      className={`text-white/80 group-hover:text-white font-medium transition-all duration-700 ease-out whitespace-nowrap ${
                         isScrolled
                           ? 'opacity-0 w-0 overflow-hidden'
                           : 'opacity-100'
@@ -93,18 +110,10 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Liquid Glass Blob Animation */}
-      {showBlob && (
-        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-40 pointer-events-none">
-          <div
-            className="w-32 h-32 rounded-full glass-effect-strong animate-blob"
-            style={{
-              background:
-                'radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, rgba(59, 130, 246, 0.2) 50%, transparent 70%)',
-              filter: 'blur(20px)',
-              animation: 'blob-bounce 0.6s ease-out',
-            }}
-          />
+      {/* Liquid Glass Morphing Blob Animation */}
+      {animationState === 'morphing' && (
+        <div className="fixed top-4 left-0 right-0 z-40 pointer-events-none flex justify-center">
+          <div className="liquid-blob-morph" />
         </div>
       )}
     </>
