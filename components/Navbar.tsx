@@ -45,7 +45,7 @@ export default function Navbar() {
     >
       <div
         className={`mx-auto glass-effect-strong rounded-full transition-all duration-700 ease-out relative ${
-          isScrolled ? 'max-w-md px-4' : 'max-w-2xl px-8'
+          isScrolled ? 'max-w-md px-2 py-1.5' : 'max-w-2xl px-4 py-3'
         }`}
       >
           <div className="flex items-center justify-between">
@@ -55,8 +55,8 @@ export default function Navbar() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`group relative transition-all duration-700 ease-out ${
-                    isScrolled ? 'py-3' : 'py-4'
+                  className={`group relative transition-all duration-700 ease-out cursor-pointer group-hover:text-white group-hover:scale-110 ${
+                    isScrolled ? 'px-4 py-2' : 'px-4 py-2'
                   }`}
                   aria-label={item.label}
                 >
@@ -64,7 +64,7 @@ export default function Navbar() {
                     <Icon
                       className={`transition-all duration-500 ${
                         isScrolled ? 'text-xl' : 'text-lg mr-2'
-                      } text-white/80 group-hover:text-white group-hover:scale-110`}
+                      } text-white/80`}
                     />
                     <span
                       className={`text-white/80 group-hover:text-white font-medium transition-all duration-700 ease-out whitespace-nowrap ${
