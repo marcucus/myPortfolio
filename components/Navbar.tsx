@@ -50,7 +50,7 @@ export default function Navbar() {
       >
         {/* Liquid glass refraction glow */}
         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/5 via-white/10 to-white/5 blur-xl -z-10 animate-pulse" style={{ animationDuration: '4s' }} />
-          <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between">
             {navItems.map((item) => {
               const Icon = item.icon;
               return (
@@ -85,8 +85,8 @@ export default function Navbar() {
                 </button>
               );
             })}
-          </div>
         </div>
+      </div>
       </nav>
   );
 }
