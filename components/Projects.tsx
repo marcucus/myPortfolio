@@ -24,7 +24,7 @@ export default function Projects() {
     {
       title: "GoldWen - Application de rencontre",
       description: "Application mobile de rencontre nouvelle génération valorisant la qualité des interactions",
-      longDescription: "GoldWen, l'application mobile de rencontre nouvelle génération qui valorise la qualité des interactions plutôt que la quantité. Conçue pour transformer la façon dont on créé des liens, cette application met la compatibilité au cœur de l'expérience utilisateur.",
+      longDescription: "GoldWen, l'application mobile de rencontre nouvelle génération qui valorise la qualité des interactions plutôt que la quantité. Conçue pour transformer la façon dont on crée des liens, cette application met la compatibilité au cœur de l'expérience utilisateur.",
       tech: ["React Native", "TypeScript", "NestJS", "Python", "PostgreSQL"],
       period: "Déc 2024 - Aujourd'hui",
       achievements: [
@@ -99,7 +99,7 @@ export default function Projects() {
     {
       title: "Foudroyer Ranking",
       description: "Service de suivi de mots-clés et positionnement sur les moteurs de recherche",
-      longDescription: "Service permettant de suivre ses mots-clés et les évolutions en calculant leurs positionnement sur les moteurs de recherches (Google, Yandex, Bing).",
+      longDescription: "Service permettant de suivre ses mots-clés et les évolutions en calculant leur positionnement sur les moteurs de recherches (Google, Yandex, Bing).",
       tech: ["ReactJS", "NestJS", "PostgreSQL", "AWS", "Node.js", "TypeScript"],
       period: "Mars 2022 - Juil 2022",
       achievements: [
