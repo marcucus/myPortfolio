@@ -6,13 +6,11 @@ import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import ScrollProgress from '@/components/ScrollProgress';
 import ScrollToTop from '@/components/ScrollToTop';
-import CursorEffect from '@/components/CursorEffect';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen select-none">
       <ScrollProgress />
-      <CursorEffect />
       <Navbar />
       <Hero />
       <About />

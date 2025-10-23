@@ -4,13 +4,13 @@ import { FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa
 
 export default function Contact() {
   return (
-    <section id="contact" className="min-h-screen py-20 px-4 relative flex items-center">
+    <section id="contact" className="min-h-screen py-20 px-4 relative flex items-center w-full">
       {/* Background effects */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-linear-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
           Contactez-moi
         </h2>
         <p className="text-center text-white/60 mb-12">
@@ -19,12 +19,12 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Info */}
-          <div className="glass-effect-strong rounded-[2rem] p-8">
+          <div className="glass-effect-strong rounded-4xl p-4">
             <h3 className="text-2xl font-bold mb-6 text-white">Informations</h3>
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-linear-to-br from-purple-500 to-blue-500 flex items-center justify-center shrink-0">
                   <FaEnvelope className="text-xl" />
                 </div>
                 <div>
@@ -39,7 +39,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-linear-to-br from-blue-500 to-cyan-500 flex items-center justify-center shrink-0">
                   <FaMapMarkerAlt className="text-xl" />
                 </div>
                 <div>
@@ -49,7 +49,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-linear-to-br from-cyan-500 to-purple-500 flex items-center justify-center shrink-0">
                   <FaLinkedin className="text-xl" />
                 </div>
                 <div>
@@ -66,7 +66,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-linear-to-br from-purple-500 to-pink-500 flex items-center justify-center shrink-0">
                   <FaGithub className="text-xl" />
                 </div>
                 <div>
@@ -85,7 +85,7 @@ export default function Contact() {
           </div>
 
           {/* Quick Contact Form */}
-          <div className="glass-effect-strong rounded-[2rem] p-8">
+          <div className="glass-effect-strong rounded-4xl p-8">
             <h3 className="text-2xl font-bold mb-6 text-white">Envoyez un message</h3>
             
             <form className="space-y-4" onSubmit={(e) => {
@@ -127,7 +127,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full glass-effect-strong px-6 py-3 rounded-xl font-semibold glass-hover border-2 border-white/25"
+                className="w-full glass-effect-strong px-6 py-3 rounded-xl font-semibold glass-hover border-2 border-white/25 cursor-pointer"
               >
                 Envoyer
               </button>
@@ -136,7 +136,7 @@ export default function Contact() {
         </div>
 
         {/* Footer */}
-        <div className="mt-16 text-center glass-effect-strong rounded-[1.5rem] py-6 px-4">
+        <div className="mt-16 text-center glass-effect-strong rounded-3xl py-6 px-4">
           <p className="text-white/60">
             © 2025 Adrien Marques. Tous droits réservés.
           </p>

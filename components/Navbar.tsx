@@ -39,13 +39,13 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed left-0 right-0 z-50 transition-all duration-700 ease-out ${
-        isScrolled ? 'top-2' : 'top-4'
+      className={`fixed left-0 right-0 z-50 transition-all duration-700 ease-out px-4 md:px-0 h-fit ${
+        isScrolled ? 'bottom-4 md:top-2' : 'bottom-2 md:top-4'
       }`}
     >
       <div
         className={`mx-auto glass-effect-strong rounded-full transition-all duration-700 ease-out relative ${
-          isScrolled ? 'max-w-md px-2 py-1.5' : 'max-w-2xl px-4 py-3'
+          isScrolled ? 'max-w-md px-2 py-1.5' : 'max-w-md px-2 py-1.5 md:max-w-2xl md:px-4 md:py-3'
         }`}
       >
           <div className="flex items-center justify-between">
@@ -63,14 +63,14 @@ export default function Navbar() {
                   <div className="relative flex items-center justify-center">
                     <Icon
                       className={`transition-all duration-500 ${
-                        isScrolled ? 'text-xl' : 'text-lg mr-2'
+                        isScrolled ? 'text-xl' : 'text-xl md:text-lg md:mr-2'
                       } text-white/80`}
                     />
                     <span
                       className={`text-white/80 group-hover:text-white font-medium transition-all duration-700 ease-out whitespace-nowrap ${
                         isScrolled
                           ? 'opacity-0 w-0 overflow-hidden'
-                          : 'opacity-100'
+                          : 'opacity-0 w-0 overflow-hidden md:opacity-100 md:w-auto'
                       }`}
                     >
                       {item.label}

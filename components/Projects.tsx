@@ -78,7 +78,7 @@ export default function Projects() {
       <div className="absolute bottom-40 right-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-linear-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
           Projets Réalisés
         </h2>
         <p className="text-center text-white/60 mb-12">
@@ -104,22 +104,22 @@ export default function Projects() {
               >
                 {/* Front of card */}
                 <div
-                  className="absolute inset-0 glass-effect-strong rounded-[2rem] p-6 backface-hidden overflow-hidden"
+                  className="absolute inset-0 glass-effect-strong rounded-4xl p-6 backface-hidden overflow-hidden"
                   style={{ backfaceVisibility: 'hidden' }}
                 >
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-linear-to-br from-purple-500/20 via-blue-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <div className="relative z-10 h-full flex flex-col">
                     {/* Project Icon */}
                     <div className="mb-4">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-3xl">
+                      <div className="w-16 h-16 rounded-full bg-linear-to-br from-purple-500 to-blue-500 flex items-center justify-center text-3xl">
                         💼
                       </div>
                     </div>
 
                     <h3 className="text-2xl font-bold mb-3 text-white">{project.title}</h3>
-                    <p className="text-white/70 mb-4 flex-grow">{project.description}</p>
+                    <p className="text-white/70 mb-4 grow">{project.description}</p>
                     <p className="text-sm text-purple-400 mb-4">{project.period}</p>
 
                     {/* Tech Stack Pills */}
@@ -143,7 +143,7 @@ export default function Projects() {
 
                 {/* Back of card */}
                 <div
-                  className="absolute inset-0 glass-effect-strong rounded-[2rem] p-6 backface-hidden"
+                  className="absolute inset-0 glass-effect-strong rounded-4xl p-6 backface-hidden"
                   style={{
                     backfaceVisibility: 'hidden',
                     transform: 'rotateY(180deg)',
@@ -153,7 +153,7 @@ export default function Projects() {
                     <h3 className="text-2xl font-bold mb-3 text-white">{project.title}</h3>
                     <p className="text-white/80 mb-4">{project.longDescription}</p>
 
-                    <div className="flex-grow">
+                    <div className="grow">
                       <h4 className="text-lg font-semibold mb-2 text-purple-400">Réalisations:</h4>
                       <ul className="space-y-2">
                         {project.achievements.map((achievement, i) => (
@@ -166,11 +166,11 @@ export default function Projects() {
                     </div>
 
                     <div className="flex gap-3 mt-4">
-                      <button className="flex-1 glass-effect px-4 py-2 rounded-full glass-hover flex items-center justify-center gap-2">
+                      <button className="flex-1 glass-effect px-4 py-2 rounded-full glass-hover flex items-center justify-center gap-2 cursor-pointer">
                         <FaGithub />
                         <span className="text-sm">Code</span>
                       </button>
-                      <button className="flex-1 glass-effect px-4 py-2 rounded-full glass-hover flex items-center justify-center gap-2">
+                      <button className="flex-1 glass-effect px-4 py-2 rounded-full glass-hover flex items-center justify-center gap-2 cursor-pointer">
                         <FaExternalLinkAlt />
                         <span className="text-sm">Demo</span>
                       </button>
@@ -185,7 +185,7 @@ export default function Projects() {
               </div>
 
               {/* 3D Shadow effect */}
-              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-[2rem] blur-2xl transform translate-y-4 group-hover:translate-y-6 transition-transform duration-500" />
+              <div className="absolute inset-0 -z-10 bg-linear-to-br from-purple-500/20 to-blue-500/20 rounded-4xl blur-2xl transform translate-y-4 group-hover:translate-y-6 transition-transform duration-500" />
             </div>
           ))}
         </div>
