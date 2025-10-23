@@ -62,15 +62,15 @@ export default function About() {
   return (
     <section id="about" className="min-h-screen py-20 px-4 relative">
       {/* Background effect */}
-      <div className="absolute top-40 right-20 w-96 h-96 bg-gradient-to-br from-purple-500/20 to-blue-500/10 rounded-full blur-3xl" />
+      <div className="absolute top-40 right-20 w-96 h-96 bg-linear-to-br from-purple-500/20 to-blue-500/10 rounded-full blur-3xl" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
           À propos
         </h2>
 
         {/* Summary */}
-        <div className="glass-effect-strong rounded-[2rem] p-8 mb-12">
+        <div className="glass-effect-strong rounded-4xl p-8 mb-12">
           <p className="text-lg text-white/80 leading-relaxed">
             Après un parcours académique rigoureux, incluant un Master en Informatique
             à l'Université de Franche-Comté, j'ai développé la marketplace « Bones » chez Ennea,
@@ -87,9 +87,9 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Experience */}
-          <div className="glass-effect-strong rounded-[2rem] p-8">
+          <div className="glass-effect-strong rounded-4xl p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-linear-to-r from-purple-500 to-blue-500 flex items-center justify-center">
                 <FaBriefcase className="text-2xl" />
               </div>
               <h3 className="text-2xl font-bold">Expérience</h3>
@@ -118,9 +118,9 @@ export default function About() {
           </div>
 
           {/* Education */}
-          <div className="glass-effect-strong rounded-[2rem] p-8">
+          <div className="glass-effect-strong rounded-4xl p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-linear-to-r from-blue-500 to-cyan-500 flex items-center justify-center">
                 <FaGraduationCap className="text-2xl" />
               </div>
               <h3 className="text-2xl font-bold">Formation</h3>
