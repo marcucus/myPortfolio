@@ -39,7 +39,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed left-0 right-0 z-50 transition-all duration-700 ease-out px-4 md:px-0 h-fit ${
+      className={`fixed left-0 right-0 z-30 transition-all duration-700 ease-out px-4 md:px-0 h-fit ${
         isScrolled ? 'bottom-4 md:top-2' : 'bottom-2 md:top-4'
       }`}
     >

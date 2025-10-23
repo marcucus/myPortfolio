@@ -24,7 +24,7 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed top-8 md:bottom-8 md:top-auto right-8 z-40 w-14 h-14 glass-effect-strong rounded-full flex items-center justify-center hover:bg-linear-to-r hover:from-purple-500/30 hover:to-blue-500/30 transition-all duration-300 hover:scale-110 border-2 border-white/20"
+      className="fixed top-8 md:bottom-8 md:top-auto right-8 z-10 w-14 h-14 glass-effect-strong rounded-full flex items-center justify-center hover:bg-linear-to-r hover:from-purple-500/30 hover:to-blue-500/30 transition-all duration-300 hover:scale-110 border-2 border-white/20"
       aria-label="Retour en haut"
     >
       <FaArrowUp className="text-xl" />
