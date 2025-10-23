@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-24 md:pt-0"
     >
       {/* Background gradient orbs - Enhanced Apple style */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-purple-500/30 to-blue-500/20 rounded-full blur-3xl animate-blob" />

@@ -44,27 +44,29 @@ export default function Navbar() {
       }`}
     >
       <div
-        className={`mx-auto glass-effect-strong rounded-full transition-all duration-700 ease-out relative ${
+        className={`mx-auto glass-effect-strong rounded-full transition-all duration-700 ease-out relative overflow-visible ${
           isScrolled ? 'max-w-md px-2 py-1.5' : 'max-w-2xl px-4 py-3'
         }`}
       >
-          <div className="flex items-center justify-between">
+        {/* Liquid glass refraction glow */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/5 via-white/10 to-white/5 blur-xl -z-10 animate-pulse" style={{ animationDuration: '4s' }} />
+        <div className="flex items-center justify-between">
             {navItems.map((item) => {
               const Icon = item.icon;
               return (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`group relative transition-all duration-700 ease-out cursor-pointer group-hover:text-white group-hover:scale-110 ${
+                  className={`group relative transition-all duration-700 ease-out cursor-pointer ${
                     isScrolled ? 'px-4 py-2' : 'px-4 py-2'
                   }`}
                   aria-label={item.label}
                 >
-                  <div className="relative flex items-center justify-center">
+                  <div className="relative flex items-center justify-center z-10">
                     <Icon
                       className={`transition-all duration-500 ${
                         isScrolled ? 'text-xl' : 'text-lg mr-2'
-                      } text-white/80`}
+                      } text-white/80 group-hover:text-white group-hover:scale-110`}
                     />
                     <span
                       className={`text-white/80 group-hover:text-white font-medium transition-all duration-700 ease-out whitespace-nowrap ${
@@ -76,13 +78,15 @@ export default function Navbar() {
                       {item.label}
                     </span>
                   </div>
-                  {/* Hover effect */}
-                  <div className="absolute inset-0 -z-10 bg-white/10 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
+                  {/* Enhanced hover effect with liquid glass appearance */}
+                  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-white/5 via-white/15 to-white/5 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 shadow-lg" />
+                  {/* Shimmer effect on hover */}
+                  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-shimmer-fast" />
                 </button>
               );
             })}
-          </div>
         </div>
+      </div>
       </nav>
   );
 }
