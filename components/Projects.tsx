@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
+import Image from 'next/image';
 
 interface Project {
   title: string;
@@ -11,63 +12,105 @@ interface Project {
   period: string;
   achievements: string[];
   image?: string;
+  skills?: string[];
+  organization?: string;
 }
 
 export default function Projects() {
   const [flippedCard, setFlippedCard] = useState<number | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const projects: Project[] = [
     {
-      title: "Marketplace Bones",
-      description: "Plateforme e-commerce complète développée chez Ennea",
-      longDescription: "Développement d'une marketplace moderne avec gestion complète des utilisateurs, produits et transactions.",
-      tech: ["React", "Node.js", "PostgreSQL", "AWS"],
-      period: "Fév 2024 - Juil 2024",
+      title: "GoldWen - Application de rencontre",
+      description: "Application mobile de rencontre nouvelle génération valorisant la qualité des interactions",
+      longDescription: "GoldWen, l'application mobile de rencontre nouvelle génération qui valorise la qualité des interactions plutôt que la quantité. Conçue pour transformer la façon dont on crée des liens, cette application met la compatibilité au cœur de l'expérience utilisateur.",
+      tech: ["React Native", "TypeScript", "NestJS", "Python", "PostgreSQL"],
+      period: "Déc 2024 - Aujourd'hui",
       achievements: [
-        "Architecture scalable et performante",
-        "Interface utilisateur responsive",
-        "Optimisation SEO avancée",
-        "Tests automatisés complets",
+        "Questionnaire de personnalité personnalisé à l'inscription",
+        "Une connexion par jour soigneusement sélectionnée",
+        "Discussions authentiques pour explorer des véritables connexions",
+        "Algorithme de compatibilité basé sur les valeurs et la personnalité",
       ],
+      skills: ["Gestion de projet", "Design d'interface utilisateur", "Application mobile", "React Native", "NestJS", "Python", "PostgreSQL"],
     },
     {
-      title: "Ranking Tool - Foudroyer",
-      description: "Outil de suivi de positionnement SEO",
-      longDescription: "Système de tracking et analyse des positions de mots-clés sur les moteurs de recherche.",
-      tech: ["ReactJS", "NestJS", "PostgreSQL", "AWS"],
-      period: "Jan 2022 - Juil 2022",
+      title: "Bones - Marketplace",
+      description: "Développement d'une application web reliée au jeu Bones",
+      longDescription: "Développement d'une application web reliée au jeu Bones. Marketplace complète avec gestion des utilisateurs, produits et transactions.",
+      tech: ["JavaScript", "Next.js", "Tailwind CSS", "TypeScript", "Firebase", "React.js"],
+      period: "Fév 2024 - Juil 2024",
       achievements: [
-        "Suivi multi-moteurs (Google, Yahoo!, Bing)",
+        "Création de composants réutilisables",
+        "Création de nouvelles pages et features",
+        "Suppression de bugs existants",
+        "Optimisation de code et responsive design",
+      ],
+      organization: "Ennea",
+      image: "/projects/bonesmarketplace.png",
+      skills: ["JavaScript", "Next.js", "Tailwind CSS", "Réalisation de tests", "Développement front-end", "Sens de l'organisation", "Développement full-stack", "Travail d'équipe", "TypeScript", "Développement web back-end", "Firebase", "Scrum", "React.js"],
+    },
+    {
+      title: "LCF AUTO-PERFORMANCE",
+      description: "Site web d'un garagiste permettant la prise de rendez-vous et la visualisation des actualités",
+      longDescription: "Création d'un site web d'un garagiste permettant la prise de rendez-vous et la visualisation des actualités du garage (ventes de véhicules, devis etc...)",
+      tech: ["Next.js", "Tailwind CSS", "React.js"],
+      period: "Juin 2024",
+      achievements: [
+        "Système de prise de rendez-vous intégré",
+        "Gestion des actualités du garage",
+        "Visualisation des ventes de véhicules",
+        "Interface responsive et moderne",
+      ],
+      image: "/projects/lcf.png",
+      skills: ["Next.js", "Communication", "Tailwind CSS", "Réalisation de tests", "Développement front-end", "Sens de l'organisation", "Méthodes agiles", "Développement full-stack", "Développement web back-end", "React.js"],
+    },
+    {
+      title: "Mon Portfolio",
+      description: "Site internet servant à me présenter ainsi que de présenter mes compétences et mes projets",
+      longDescription: "Création de mon site internet servant à me présenter ainsi que de présenter mes compétences et mes projets. Disponible à cette adresse : https://marquesadrien.vercel.app/",
+      tech: ["JavaScript", "Tailwind CSS", "React.js"],
+      period: "Mai 2024",
+      achievements: [
+        "Design moderne et responsive",
+        "Présentation claire des compétences",
+        "Mise en valeur des projets réalisés",
+        "Déploiement sur Vercel",
+      ],
+      organization: "Autodidacte",
+      skills: ["JavaScript", "Tailwind CSS", "Développement front-end", "Sens de l'organisation", "Développement full-stack", "Design d'interface utilisateur", "Développement web back-end", "React.js"],
+    },
+    {
+      title: "Dijoma - Site vitrine",
+      description: "Site vitrine pour une entreprise de réparation automobile",
+      longDescription: "Création d'un site vitrine pour une entreprise de réparation automobile avec présentation des services et informations de contact.",
+      tech: ["React.js", "Tailwind CSS"],
+      period: "Juin 2023",
+      achievements: [
+        "Design moderne et professionnel",
+        "Présentation claire des services",
+        "Interface responsive",
+        "Optimisation SEO",
+      ],
+      image: "/projects/dijoma.png",
+      skills: ["Tailwind CSS", "Réalisation de tests", "Sens de l'organisation", "Méthodes agiles", "Design d'interface utilisateur", "React.js"],
+    },
+    {
+      title: "Foudroyer Ranking",
+      description: "Service de suivi de mots-clés et positionnement sur les moteurs de recherche",
+      longDescription: "Service permettant de suivre ses mots-clés et les évolutions en calculant leur positionnement sur les moteurs de recherches (Google, Yandex, Bing).",
+      tech: ["ReactJS", "NestJS", "PostgreSQL", "AWS", "Node.js", "TypeScript"],
+      period: "Mars 2022 - Juil 2022",
+      achievements: [
+        "Suivi multi-moteurs (Google, Yandex, Bing)",
         "Calcul de positionnement en temps réel",
         "Tableaux de bord analytiques",
         "API REST performante",
       ],
-    },
-    {
-      title: "Organon - Bird and Human",
-      description: "Interface de suivi de projets prestataire/client",
-      longDescription: "Plateforme collaborative pour la gestion de projets entre prestataires de services et clients.",
-      tech: ["HTML", "CSS", "PHP", "JavaScript", "SQL"],
-      period: "Déc 2019 - Fév 2020",
-      achievements: [
-        "Gestion de projets collaborative",
-        "Système de notifications",
-        "Suivi de l'avancement en temps réel",
-        "Interface intuitive",
-      ],
-    },
-    {
-      title: "Projets Personnels",
-      description: "Portfolio de projets open-source et expérimentations",
-      longDescription: "Collection de projets personnels explorant différentes technologies et concepts.",
-      tech: ["React Native", "TypeScript", "Next.js", "Python"],
-      period: "2017 - Présent",
-      achievements: [
-        "Applications mobiles multiplateformes",
-        "Contributions open-source",
-        "Expérimentations avec IA/ML",
-        "Projets de veille technologique",
-      ],
+      organization: "Foudroyer",
+      image: "/projects/ranking.png",
+      skills: ["JavaScript", "Tailwind CSS", "Développement front-end", "Sens de l'organisation", "Développement full-stack", "Travail d'équipe", "TypeScript", "Développement web back-end", "Scrum", "React.js", "Node.js", "SQL", "PostgreSQL"],
     },
   ];
 
@@ -84,6 +127,33 @@ export default function Projects() {
         <p className="text-center text-white/60 mb-12">
           Cliquez sur une carte pour découvrir plus de détails
         </p>
+
+        {/* Image Modal */}
+        {selectedImage && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <div className="relative max-w-5xl w-full">
+              <button
+                className="absolute -top-12 right-0 text-white/80 hover:text-white text-3xl"
+                onClick={() => setSelectedImage(null)}
+              >
+                <FaTimes />
+              </button>
+              <div className="relative w-full h-[80vh]">
+                <Image
+                  src={selectedImage}
+                  alt="Project screenshot"
+                  fill
+                  sizes="100vw"
+                  className="object-contain"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* 3D Flip Cards Grid */}
         <div className="grid md:grid-cols-2 gap-8">
@@ -111,20 +181,41 @@ export default function Projects() {
                   <div className="absolute inset-0 bg-linear-to-br from-purple-500/20 via-blue-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <div className="relative z-10 h-full flex flex-col">
-                    {/* Project Icon */}
-                    <div className="mb-4">
-                      <div className="w-16 h-16 rounded-full bg-linear-to-br from-purple-500 to-blue-500 flex items-center justify-center text-3xl">
-                        💼
+                    {/* Project Image or Icon */}
+                    {project.image ? (
+                      <div 
+                        className="mb-4 relative w-full h-32 rounded-lg overflow-hidden cursor-pointer"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedImage(project.image!);
+                        }}
+                      >
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover hover:scale-105 transition-transform duration-300"
+                        />
                       </div>
-                    </div>
+                    ) : (
+                      <div className="mb-4">
+                        <div className="w-16 h-16 rounded-full bg-linear-to-br from-purple-500 to-blue-500 flex items-center justify-center text-3xl">
+                          💼
+                        </div>
+                      </div>
+                    )}
 
                     <h3 className="text-2xl font-bold mb-3 text-white">{project.title}</h3>
+                    {project.organization && (
+                      <p className="text-sm text-cyan-400 mb-2">Associé à {project.organization}</p>
+                    )}
                     <p className="text-white/70 mb-4 grow">{project.description}</p>
                     <p className="text-sm text-purple-400 mb-4">{project.period}</p>
 
                     {/* Tech Stack Pills */}
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.map((tech, i) => (
+                      {project.tech.slice(0, 4).map((tech, i) => (
                         <span
                           key={i}
                           className="px-3 py-1 rounded-full glass-effect text-xs text-white/80"
@@ -132,6 +223,11 @@ export default function Projects() {
                           {tech}
                         </span>
                       ))}
+                      {project.tech.length > 4 && (
+                        <span className="px-3 py-1 rounded-full glass-effect text-xs text-white/80">
+                          +{project.tech.length - 4}
+                        </span>
+                      )}
                     </div>
 
                     <div className="flex items-center justify-center text-white/60 text-sm mt-auto">
@@ -143,7 +239,7 @@ export default function Projects() {
 
                 {/* Back of card */}
                 <div
-                  className="absolute inset-0 glass-effect-strong rounded-4xl p-6 backface-hidden"
+                  className="absolute inset-0 glass-effect-strong rounded-4xl p-6 backface-hidden overflow-y-auto"
                   style={{
                     backfaceVisibility: 'hidden',
                     transform: 'rotateY(180deg)',
@@ -163,17 +259,6 @@ export default function Projects() {
                           </li>
                         ))}
                       </ul>
-                    </div>
-
-                    <div className="flex gap-3 mt-4">
-                      <button className="flex-1 glass-effect px-4 py-2 rounded-full glass-hover flex items-center justify-center gap-2 cursor-pointer">
-                        <FaGithub />
-                        <span className="text-sm">Code</span>
-                      </button>
-                      <button className="flex-1 glass-effect px-4 py-2 rounded-full glass-hover flex items-center justify-center gap-2 cursor-pointer">
-                        <FaExternalLinkAlt />
-                        <span className="text-sm">Demo</span>
-                      </button>
                     </div>
 
                     <div className="flex items-center justify-center text-white/60 text-sm mt-4">
