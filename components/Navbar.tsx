@@ -44,7 +44,7 @@ export default function Navbar() {
       }`}
     >
       <div
-        className={`mx-auto glass-effect-strong rounded-full transition-all duration-700 ease-out relative ${
+        className={`mx-auto navbar-glass rounded-full transition-all duration-700 ease-out relative ${
           isScrolled ? 'max-w-md px-2 py-1.5' : 'max-w-md px-2 py-1.5 md:max-w-2xl md:px-4 md:py-3'
         }`}
       >
