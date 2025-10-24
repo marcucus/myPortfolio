@@ -37,6 +37,8 @@ export default function Navbar() {
     }
   };
 
+  const glassStyles = 'border border-white/25 shadow-[0_8px_32px_0_rgba(0,0,0,0.4),inset_0_1px_0_0_rgba(255,255,255,0.15),0_1px_2px_0_rgba(0,0,0,0.3)] backdrop-blur-[30px] backdrop-saturate-[180%] bg-gradient-to-br from-white/15 to-white/8';
+
   return (
     <nav
       className={`fixed left-0 right-0 z-30 transition-all duration-700 ease-out px-4 md:px-0 h-fit ${
@@ -44,9 +46,12 @@ export default function Navbar() {
       }`}
     >
       <div
-        className={`mx-auto navbar-glass rounded-full transition-all duration-700 ease-out relative ${
+        className={`mx-auto rounded-full transition-all duration-700 ease-out relative ${glassStyles} ${
           isScrolled ? 'max-w-md px-2 py-1.5' : 'max-w-md px-2 py-1.5 md:max-w-2xl md:px-4 md:py-3'
         }`}
+        style={{
+          WebkitBackdropFilter: 'blur(30px) saturate(180%)',
+        }}
       >
           <div className="flex items-center justify-between">
             {navItems.map((item) => {
